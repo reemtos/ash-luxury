@@ -1,0 +1,31 @@
+.modal {
+    
+    &.product-view {
+        
+        .modal-header,
+        .modal-footer {
+            border: none;
+        }
+        
+        .head-section {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1rem 2rem 0;
+            width: 100%;
+            
+            .close {
+                color: $color-dark;
+                font-size: 2rem;
+                opacity: 1;
+                
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        
+        .modal-body {
+            padding: 1rem 2rem 2rem;
+        }
+    }
+}

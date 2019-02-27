@@ -1,0 +1,13 @@
+.loader {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+    .label {
+        letter-spacing: 0.1rem;
+    }
+    
+    .preloader {
+        margin-right: 1rem;
+    }
+}

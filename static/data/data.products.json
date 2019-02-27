@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "category": "Men's Wear",
+    "description": "Product description goes here.",
+    "image": "product1.jpg",
+    "name": "Complete Kit 1",
+    "price": 450.00,
+    "quantity": 2,
+    "sizes": ["38", "39", "40"]
+  },
+  {
+    "id": 2,
+    "category": "Bags",
+    "description": "Product description goes here.",
+    "image": "product2.jpg",
+    "name": "Brown Leather Bag",
+    "price": 75.00,
+    "quantity": 3,
+    "sizes": ["40", "41", "42"]
+  },
+  {
+    "id": 3,
+    "category": "Bags",
+    "description": "Product description goes here.",
+    "image": "product3.jpg",
+    "name": "Bag with chain",
+    "price": 55.00,
+    "quantity": 7,
+    "sizes": ["40", "41", "42"]
+  },
+  {
+    "id": 4,
+    "category": "Men's Shoes",
+    "description": "Product description goes here.",
+    "image": "product4.jpg",
+    "name": "Grey Wool Cardigan",
+    "price": 95.00,
+    "quantity": 5,
+    "sizes": ["44", "45", "46"]
+  },
+  {
+    "id": 5,
+    "category": "Men's Shoes",
+    "description": "Product description goes here.",
+    "image": "product5.jpg",
+    "name": "White Wool Cardigan",
+    "price": 95.00,
+    "quantity": 5,
+    "sizes": ["44", "45", "46"]
+  },
+  {
+    "id": 6,
+    "category": "Men's Shoes",
+    "description": "Product description goes here.",
+    "image": "product6.jpg",
+    "name": "White Adidas Superstar",
+    "price": 150.00,
+    "quantity": 9,
+    "sizes": ["40", "42", "43"]
+  },
+  {
+    "id": 7,
+    "category": "Bags",
+    "description": "Product description goes here.",
+    "image": "product7.jpg",
+    "name": "Female Yellow Bag",
+    "price": 75.00,
+    "quantity": 5,
+    "sizes": ["44", "45", "46"]
+  },
+  {
+    "id": 8,
+    "category": "Men's Shoes",
+    "description": "Product description goes here.",
+    "image": "product8.jpg",
+    "name": "Nike Cortez",
+    "price": 165.00,
+    "quantity": 5,
+    "sizes": ["40", "42", "43"]
+  },
+  {
+    "id": 9,
+    "category": "Men's Wear",
+    "description": "Product description goes here.",
+    "image": "product9.jpg",
+    "name": "Men's Blue Jean",
+    "price": 55.00,
+    "quantity": 5,
+    "sizes": ["40", "42", "43", "46"]
+  },
+  {
+    "id": 10,
+    "category": "Men's Shoes",
+    "description": "Product description goes here.",
+    "image": "product10.jpg",
+    "name": "Mixed-colored Wool Cardigan",
+    "price": 100.00,
+    "quantity": 5,
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 11,
+    "category": "Men's Shoes",
+    "description": "Product description goes here.",
+    "image": "product11.jpg",
+    "name": "Different Smart Casual",
+    "price": 175.00,
+    "quantity": 14,
+    "sizes": ["40", "42", "44"]
+  },
+  {
+    "id": 12,
+    "category": "Men's Shoes",
+    "description": "Product description goes here.",
+    "image": "product12.jpg",
+    "name": "Loafers and Drivers",
+    "price": 115.00,
+    "quantity": 5,
+    "sizes": ["44", "45", "46"]
+  },
+  {
+    "id": 13,
+    "category": "Belt",
+    "description": "Product description goes here.",
+    "image": "product13.jpg",
+    "name": "Jean Belt",
+    "price": 75.00,
+    "quantity": 3,
+    "sizes": ["40", "41", "42"]
+  },
+  {
+    "id": 14,
+    "category": "Belt",
+    "description": "Product description goes here.",
+    "image": "product14.jpg",
+    "name": "Black Leather Belt",
+    "price": 95.00,
+    "quantity": 5,
+    "sizes": ["44", "45", "46"]
+  },
+  {
+    "id": 15,
+    "category": "Wristwatch",
+    "description": "Product description goes here.",
+    "image": "product15.jpg",
+    "name": "Fossil Wristwatch",
+    "price": 295.00,
+    "quantity": 5,
+    "sizes": ["44", "45", "46"]
+  },
+  {
+    "id": 16,
+    "category": "Hoodies",
+    "description": "Product description goes here.",
+    "image": "product16.jpg",
+    "name": "Adidas Hoodie",
+    "price": 100.00,
+    "quantity": 9,
+    "sizes": ["40", "42", "43"]
+  },
+  {
+    "id": 17,
+    "category": "Hoodies",
+    "description": "Product description goes here.",
+    "image": "product17.jpg",
+    "name": "Black Vans Hoodie",
+    "price": 105.00,
+    "quantity": 5,
+    "sizes": ["44", "45", "46"]
+  },
+  {
+    "id": 18,
+    "category": "Wristwatch",
+    "description": "Product description goes here.",
+    "image": "product18.jpg",
+    "name": "Black Adam Wristwatch",
+    "price": 365.00,
+    "quantity": 5,
+    "sizes": ["40", "42", "43"]
+  },
+  {
+    "id": 19,
+    "category": "Wristwatch",
+    "description": "Product description goes here.",
+    "image": "product19.jpg",
+    "name": "Daniel Wellington Wristwatch",
+    "price": 355.00,
+    "quantity": 5,
+    "sizes": ["40", "42", "43", "46"]
+  },
+  {
+    "id": 20,
+    "category": "Wristwatch",
+    "description": "Product description goes here.",
+    "image": "product20.jpg",
+    "name": "Casio Silver Wristwatch",
+    "price": 100.00,
+    "quantity": 5,
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 21,
+    "category": "Belt",
+    "description": "Product description goes here.",
+    "image": "product21.jpg",
+    "name": "Brown Leather Belt",
+    "price": 75.00,
+    "quantity": 14,
+    "sizes": ["40", "42", "44"]
+  },
+  {
+    "id": 22,
+    "category": "Hoodies",
+    "description": "Product description goes here.",
+    "image": "product22.jpg",
+    "name": "Yellow Hoodie",
+    "price": 85.00,
+    "quantity": 5,
+    "sizes": ["44", "45", "46"]
+  }
+]
