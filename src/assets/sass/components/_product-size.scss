@@ -1,0 +1,19 @@
+.product-size {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    
+    &.light-color {
+        color: $color-dark-light;
+    }
+    
+    &__value {
+        
+        &:not(:last-of-type) {
+            
+            &::after {
+                content: ',';
+                margin-right: 0.2rem;
+            }
+        }
+    }
+}

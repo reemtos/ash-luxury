@@ -1,0 +1,81 @@
+.section__header {
+    padding: 2rem 1rem;
+    
+    .top-section {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+    }
+    
+    .company-info {
+        
+        .text {
+            color: $color-dark-light;
+            font-size: 1.3rem;
+            
+            span {
+                margin-right: 1.5rem;
+            }
+            
+            .icon {
+                font-size: 1.1rem;
+                margin-right: 0.3rem;
+            }
+        }
+    }
+    
+    .logo-box {
+        display: flex;
+        flex-direction: column;
+        
+        .logo {
+            color: $color-dark-light;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 300ms ease;
+            
+            &:hover {
+                color: $color-dark;
+            }
+        }
+        
+        .tagline {
+            color: $color-dark-light;
+            font-size: 1.3rem;
+        }
+    }
+    
+    .cart-section {
+        color: $color-dark-light;
+        cursor: pointer;
+        font-size: 1.3rem;
+        padding: 0.5rem 2rem;
+        position: relative;
+        
+        .icon {
+            margin-right: 0.4rem;
+        }
+        
+        .label {
+        }
+        
+        .count {
+            align-items: center;
+            background-color: orange;
+            border-radius: 100%;
+            display: flex;
+            font-size: 0.8rem;
+            font-weight: 700;
+            height: 1.7rem;
+            justify-content: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 1.7rem;
+        }
+    }
+}
