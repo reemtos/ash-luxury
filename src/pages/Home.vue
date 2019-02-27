@@ -1,9 +1,14 @@
 <template>
     <div class="page">
-        <div class="notificatiob-var" v-if="responseMessage">
+        <div
+            :class="'notification-bar ' + responseType"
+            v-if="responseMessage">
             <div class="container">
                 <div class="notification">
-                    <i class="fas fa-thumbs-up notification__icon"></i>
+                    <i class="fas fa-thumbs-up notification__icon"
+                        v-if="responseType === 'success'"></i>
+                    <i class="fas fa-exclamation-triangle notification__icon"
+                        v-if="responseType === 'error'"></i>
                     <p class="notification__message">{{ responseMessage }}</p>
                 </div>
             </div>
@@ -50,7 +55,8 @@
                                     v-on:click="viewProduct(productList[itemIndex])">
                                     {{ productList[itemIndex].name }}
                                 </h5>
-                                <ProductSizes :sizes="productList[itemIndex].sizes" :extraClass="'light-color'" />
+                                <ProductSizes :sizes="productList[itemIndex].sizes"
+                                                :extraClass="'light-color'" />
                             </div>
                             <div class="action">
                                 <button class="btn btn-primary bg-orange"
@@ -192,6 +198,7 @@ export default {
       postUrl: 'http://www.mocky.io/v2/5be477442f00004900d9f521',
       productList: [],
       responseMessage: '',
+      responseType: '',
       selectedProduct: {},
       selectedProductQuantity: 1,
       totalCartPrice: 0,
@@ -213,9 +220,11 @@ export default {
         .then((response) => {
           this.responseMessage = response.data.message;
           this.cartItems = [];
+          this.responseType = 'success';
         })
         .catch((response) => {
-          this.responseMessage = response.data.message;
+          this.responseMessage = response;
+          this.responseType = 'error';
         });
       this.$refs.CartModal.hide();
     },
