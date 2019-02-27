@@ -6,7 +6,7 @@
     "image": "product1.jpg",
     "name": "Complete Kit 1",
     "price": 450.00,
-    "quantity": 2,
+    "stockAmount": 2,
     "sizes": ["38", "39", "40"]
   },
   {
@@ -16,7 +16,7 @@
     "image": "product2.jpg",
     "name": "Brown Leather Bag",
     "price": 75.00,
-    "quantity": 3,
+    "stockAmount": 3,
     "sizes": ["40", "41", "42"]
   },
   {
@@ -26,7 +26,7 @@
     "image": "product3.jpg",
     "name": "Bag with chain",
     "price": 55.00,
-    "quantity": 7,
+    "stockAmount": 7,
     "sizes": ["40", "41", "42"]
   },
   {
@@ -36,7 +36,7 @@
     "image": "product4.jpg",
     "name": "Grey Wool Cardigan",
     "price": 95.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["44", "45", "46"]
   },
   {
@@ -46,7 +46,7 @@
     "image": "product5.jpg",
     "name": "White Wool Cardigan",
     "price": 95.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["44", "45", "46"]
   },
   {
@@ -56,7 +56,7 @@
     "image": "product6.jpg",
     "name": "White Adidas Superstar",
     "price": 150.00,
-    "quantity": 9,
+    "stockAmount": 9,
     "sizes": ["40", "42", "43"]
   },
   {
@@ -66,7 +66,7 @@
     "image": "product7.jpg",
     "name": "Female Yellow Bag",
     "price": 75.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["44", "45", "46"]
   },
   {
@@ -76,7 +76,7 @@
     "image": "product8.jpg",
     "name": "Nike Cortez",
     "price": 165.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["40", "42", "43"]
   },
   {
@@ -86,7 +86,7 @@
     "image": "product9.jpg",
     "name": "Men's Blue Jean",
     "price": 55.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["40", "42", "43", "46"]
   },
   {
@@ -96,7 +96,7 @@
     "image": "product10.jpg",
     "name": "Mixed-colored Wool Cardigan",
     "price": 100.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["S", "M", "L", "XL"]
   },
   {
@@ -106,7 +106,7 @@
     "image": "product11.jpg",
     "name": "Different Smart Casual",
     "price": 175.00,
-    "quantity": 14,
+    "stockAmount": 14,
     "sizes": ["40", "42", "44"]
   },
   {
@@ -116,7 +116,7 @@
     "image": "product12.jpg",
     "name": "Loafers and Drivers",
     "price": 115.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["44", "45", "46"]
   },
   {
@@ -126,7 +126,7 @@
     "image": "product13.jpg",
     "name": "Jean Belt",
     "price": 75.00,
-    "quantity": 3,
+    "stockAmount": 3,
     "sizes": ["40", "41", "42"]
   },
   {
@@ -136,7 +136,7 @@
     "image": "product14.jpg",
     "name": "Black Leather Belt",
     "price": 95.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["44", "45", "46"]
   },
   {
@@ -146,7 +146,7 @@
     "image": "product15.jpg",
     "name": "Fossil Wristwatch",
     "price": 295.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["44", "45", "46"]
   },
   {
@@ -156,7 +156,7 @@
     "image": "product16.jpg",
     "name": "Adidas Hoodie",
     "price": 100.00,
-    "quantity": 9,
+    "stockAmount": 9,
     "sizes": ["40", "42", "43"]
   },
   {
@@ -166,7 +166,7 @@
     "image": "product17.jpg",
     "name": "Black Vans Hoodie",
     "price": 105.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["44", "45", "46"]
   },
   {
@@ -176,7 +176,7 @@
     "image": "product18.jpg",
     "name": "Black Adam Wristwatch",
     "price": 365.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["40", "42", "43"]
   },
   {
@@ -186,7 +186,7 @@
     "image": "product19.jpg",
     "name": "Daniel Wellington Wristwatch",
     "price": 355.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["40", "42", "43", "46"]
   },
   {
@@ -196,7 +196,7 @@
     "image": "product20.jpg",
     "name": "Casio Silver Wristwatch",
     "price": 100.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["S", "M", "L", "XL"]
   },
   {
@@ -206,7 +206,7 @@
     "image": "product21.jpg",
     "name": "Brown Leather Belt",
     "price": 75.00,
-    "quantity": 14,
+    "stockAmount": 14,
     "sizes": ["40", "42", "44"]
   },
   {
@@ -216,7 +216,7 @@
     "image": "product22.jpg",
     "name": "Yellow Hoodie",
     "price": 85.00,
-    "quantity": 5,
+    "stockAmount": 5,
     "sizes": ["44", "45", "46"]
   }
 ]

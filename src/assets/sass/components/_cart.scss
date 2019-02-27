@@ -97,12 +97,27 @@
         }
     }
     
-    .total-section {
-        align-items: center;
-        background-color: $color-dark-lightest;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 8rem;
-        padding: 1rem;
+    .extra-section {
+        text-align: center;
+        
+        .total {
+            align-items: center;
+            background-color: $color-dark-lightest;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            padding: 1rem;
+        }
+        
+        .continue {
+            color: $color-dark-light;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 4rem;
+            
+            &:hover {
+                color: $color-dark;
+            }
+        }
     }
 }

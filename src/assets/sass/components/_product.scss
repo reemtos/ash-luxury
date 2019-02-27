@@ -37,5 +37,17 @@
         flex-direction: column;
         justify-content: center;
         margin: 5rem 0 2rem;
+        text-align: center;
+        
+        .checkout {
+            color: $color-dark-light;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 2rem;
+            
+            &:hover {
+                color: $color-dark;
+            }
+        }
     }
 }

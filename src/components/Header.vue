@@ -7,7 +7,7 @@
                         <a href="/" class="logo">Ash Luxury</a>
                         <span class="tagline">Fashion & Lifestyle</span>
                     </div>
-                    <div class="cart-section" v-on:click="viewCart">
+                    <div class="cart-section" @click="viewCart">
                         <i class="fas fa-shopping-cart icon"></i>
                         <span class="label">Cart</span>
                         <span class="count">{{ cartItemsLength }}</span>
