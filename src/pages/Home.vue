@@ -1,18 +1,6 @@
 <template>
     <div class="page">
-        <div
-            :class="'notification-bar ' + responseType"
-            v-if="responseMessage">
-            <div class="container">
-                <div class="notification">
-                    <i class="fas fa-thumbs-up notification__icon"
-                        v-if="responseType === 'success'"></i>
-                    <i class="fas fa-exclamation-triangle notification__icon"
-                        v-if="responseType === 'error'"></i>
-                    <p class="notification__message">{{ responseMessage }}</p>
-                </div>
-            </div>
-        </div>
+        <Notification :responseType="responseType" :responseMessage="responseMessage" />
         <Header v-bind:cartItemsLength="cartItems.length" />
         <section class="section section-products">
             <div class="section-bg"></div>
@@ -34,12 +22,12 @@
                                 <ProductSizes :sizes="productList[itemIndex].sizes" />
                                 <button class="btn btn-primary"
                                         v-if="!itemIsInCart(productList[itemIndex])"
-                                        v-on:click="addToCart(productList[itemIndex])">
+                                        @click="addToCart(productList[itemIndex])">
                                     Add to cart
                                 </button>
                                 <button class="btn btn-primary"
                                         v-if="itemIsInCart(productList[itemIndex])"
-                                        v-on:click="removeFromCart(productList[itemIndex])">
+                                        @click="removeFromCart(productList[itemIndex])">
                                     Remove from cart
                                 </button>
                             </div>
@@ -52,7 +40,7 @@
                         <div class="product__details">
                             <div class="details">
                                 <h5 class="product__name"
-                                    v-on:click="viewProduct(productList[itemIndex])">
+                                    @click="viewProduct(productList[itemIndex])">
                                     {{ productList[itemIndex].name }}
                                 </h5>
                                 <ProductSizes :sizes="productList[itemIndex].sizes"
@@ -61,12 +49,12 @@
                             <div class="action">
                                 <button class="btn btn-primary bg-orange"
                                         v-if="!itemIsInCart(productList[itemIndex])"
-                                        v-on:click="addToCart(productList[itemIndex])">
+                                        @click="addToCart(productList[itemIndex])">
                                     Add to cart
                                 </button>
                                 <button class="btn btn-primary bg-orange"
                                         v-if="itemIsInCart(productList[itemIndex])"
-                                        v-on:click="removeFromCart(productList[itemIndex])">
+                                        @click="removeFromCart(productList[itemIndex])">
                                     Remove from cart
                                 </button>
                             </div>
@@ -85,9 +73,10 @@
             </div>
         </section>
         <CTASection />
+        <!-- Modal for Product View -->
         <b-modal ref="ProductViewModal" modal-class="product-view" size="md">
             <div slot="modal-header" class="head-section">
-                <button class="close" @click="hideModal">
+                <button class="close" @click="hideProductModal">
                     <i class="fas fa-times-circle"></i>
                 </button>
             </div>
@@ -101,26 +90,32 @@
                     </div>
                     <div class="right">
                         <span class="single-product__qty">
-                            {{ selectedProduct.quantity - selectedProductQuantity }} left
+                            {{ selectedProduct.stockAmount - selectedProductQuantity }} left
                         </span>
                     </div>
                 </div>
                 <div class="actions">
                     <div class="button-group">
                         <button class="button-quantity minus"
-                                v-on:click="decrementQuantity(selectedProduct)">-</button>
+                                @click="decrementQuantity(selectedProduct)">-</button>
                         <label class="button-label">
                             Quantity : {{ selectedProductQuantity }}
                         </label>
                         <button class="button-quantity plus"
-                                v-on:click="incrementQuantity(selectedProduct)">+</button>
+                                @click="incrementQuantity(selectedProduct)">+</button>
                     </div>
                     <button class="btn btn-primary main"
-                            v-on:click="addToCart(selectedProduct)">Add to cart</button>
+                            v-if="!itemIsInCart(selectedProduct)"
+                            @click="addToCart(selectedProduct)">Add to cart</button>
+                    <button class="btn btn-primary main"
+                            v-if="itemIsInCart(selectedProduct)"
+                            @click="removeFromCart(selectedProduct)">Remove from cart</button>
+                    <span class="checkout" @click="checkoutNow">Checkout now</span>
                 </div>
             </div>
             <div slot="modal-footer"></div>
         </b-modal>
+        <!-- Modal for Cart View -->
         <b-modal ref="CartModal" modal-class="product-view" size="md">
             <div slot="modal-header"></div>
             <div class="cart-header">
@@ -142,23 +137,26 @@
                     <div class="action-section">
                         <div class="button-group">
                             <button class="button-quantity minus"
-                                    v-on:click="decrementQuantity(item)">-</button>
+                                    @click="decrementQuantity(item)">-</button>
                             <label class="button-label">
                                 {{ item.quantity }}
                             </label>
                             <button class="button-quantity plus"
-                                    v-on:click="incrementQuantity(item)">+</button>
+                                    @click="incrementQuantity(item)">+</button>
                         </div>
                         <span class="remove"
-                                v-on:click="removeFromCart(item)">remove</span>
+                                @click="removeFromCart(item)">remove</span>
                     </div>
                 </div>
-                <div class="total-section">
-                    <span>Total</span>
-                    <span>{{ totalCartPrice }}</span>
+                <div class="extra-section">
+                    <div class="total">
+                        <span>Total</span>
+                        <span>{{'\u20A6'}} {{ getCartTotal(cartItems) }}</span>
+                    </div>
+                    <span class="continue" @click="hideCartModal">Continue shopping</span>
                 </div>
                 <button class="btn btn-primary main full-width"
-                        v-on:click="checkout">checkout</button>
+                        @click="checkout">checkout</button>
             </div>
             <p v-if="!cartItems.length">There are no items in your cart.</p>
             <div slot="modal-footer"></div>
@@ -173,6 +171,7 @@ import BModalDirective from 'bootstrap-vue/es/directives/modal/modal';
 import CTASection from '../components/CTASection';
 import Header from '../components/Header';
 import Loader from '../components/Loader';
+import Notification from '../components/Notification';
 import ProductSizes from '../components/ProductSizes';
 
 export default {
@@ -181,14 +180,14 @@ export default {
     CTASection,
     Header,
     Loader,
+    Notification,
     ProductSizes,
   },
   created() {
-    axios.get('/static/data/data.products.json')
-      .then((response) => {
-        this.productList = response.data;
-        this.loader = false;
-      });
+    axios.get('/static/data/data.products.json').then((response) => {
+      this.productList = response.data;
+      this.loader = false;
+    });
   },
   data() {
     return {
@@ -211,12 +210,19 @@ export default {
     addToCart(item) {
       const index = this.cartItems.findIndex(i => i.id === item.id);
       if (index < 0) {
-        this.cartItems.push(item);
+        this.cartItems.push({ ...item, quantity: this.selectedProductQuantity });
         this.totalCartPrice += item.price;
       }
     },
+
+    checkoutNow() {
+      this.$refs.ProductViewModal.hide();
+      this.viewCart();
+    },
+
     checkout() {
-      axios.post(this.postUrl, this.cartItems)
+      axios
+        .post(this.postUrl, this.cartItems)
         .then((response) => {
           this.responseMessage = response.data.message;
           this.cartItems = [];
@@ -228,34 +234,63 @@ export default {
         });
       this.$refs.CartModal.hide();
     },
-    decrementQuantity() {
+
+    decrementQuantity(item) {
+      if (item.quantity) {
+        this.selectedProductQuantity = item.quantity;
+      }
       if (this.selectedProductQuantity > 1) {
         this.selectedProductQuantity = this.selectedProductQuantity - 1;
+        if (item.quantity) {
+          item.quantity = this.selectedProductQuantity;
+        }
       }
     },
+
+    getCartTotal(cart) {
+      return cart.reduce((total, item) => {
+        let result = total;
+        result += item.price * item.quantity;
+        return result;
+      }, 0);
+    },
+
     incrementQuantity(item) {
-      if (this.selectedProductQuantity < item.quantity) {
+      if (item.quantity) {
+        this.selectedProductQuantity = item.quantity;
+      }
+      if (this.selectedProductQuantity < item.stockAmount) {
         this.selectedProductQuantity = this.selectedProductQuantity + 1;
+        if (item.quantity) {
+          item.quantity = this.selectedProductQuantity;
+        }
       }
     },
+
     itemIsInCart(item) {
-      return this.cartItems.indexOf(item) > -1;
+      return this.cartItems.findIndex(i => i.id === item.id) > -1;
     },
+
     removeFromCart(item) {
-      const indexOfItem = this.cartItems.indexOf(item);
-      if (indexOfItem > -1) {
-        this.cartItems.splice(indexOfItem, 1);
+      const index = this.cartItems.findIndex(i => i.id === item.id);
+      if (index > -1) {
+        this.cartItems.splice(index, 1);
       }
     },
-    showModal() {
-      this.$refs.ProductViewModal.show();
-    },
-    hideModal() {
+
+    hideProductModal() {
       this.$refs.ProductViewModal.hide();
+      this.selectedProductQuantity = 1;
     },
+
+    hideCartModal() {
+      this.$refs.CartModal.hide();
+    },
+
     viewCart() {
       this.$refs.CartModal.show();
     },
+
     viewProduct(item) {
       this.selectedProduct = item;
       this.$refs.ProductViewModal.show();
